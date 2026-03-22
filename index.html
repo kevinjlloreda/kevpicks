@@ -364,6 +364,195 @@ a.plan-btn{display:block;text-decoration:none;}
   gap: 4px;
 }
 
+
+
+@media(max-width:480px){
+  .plans-grid{
+    grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .plans-grid::-webkit-scrollbar{ display: none; }
+  .plan-card{
+    min-width: 85vw;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+  .plans-scroll-hint{
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+  }
+}
+@media(min-width:481px){
+  .plans-scroll-hint{ display: none; }
+}
+
+
+@media(max-width:480px){
+  .partners-grid{
+    grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .partners-grid::-webkit-scrollbar{ display: none; }
+  .partner-card{
+    min-width: 80vw;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}
+
+
+/* ── FROSTED GLASS OVERHAUL ─────────────────────────── */
+body {
+  background: #000 !important;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(0,255,106,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(0,180,80,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 10%, rgba(0,255,106,0.06) 0%, transparent 40%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Glass mixin applied to all cards */
+.plan-card, .partner-card, .social-card, .slip, .members-bar, .pill,
+nav, .admin-box, .gambling-notice {
+  background: rgba(255,255,255,0.04) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Nav glass */
+nav {
+  background: rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+}
+
+/* Plan cards glass with green tint */
+.plan-card.featured {
+  background: rgba(0,255,106,0.06) !important;
+  border: 1px solid rgba(0,255,106,0.2) !important;
+}
+.plan-card.lifetime-card {
+  background: rgba(0,255,106,0.05) !important;
+  border: 1px solid rgba(0,255,106,0.35) !important;
+  box-shadow: 0 0 40px rgba(0,255,106,0.1), 0 0 80px rgba(0,255,106,0.05) !important;
+}
+
+/* Slip cards */
+.slip {
+  background: rgba(255,255,255,0.05) !important;
+}
+.slip::before {
+  background: var(--green) !important;
+  box-shadow: 0 0 8px rgba(0,255,106,0.6) !important;
+}
+
+/* Social cards */
+.social-card:hover, .partner-card:hover, .plan-card:hover {
+  background: rgba(255,255,255,0.07) !important;
+  border-color: rgba(0,255,106,0.3) !important;
+}
+
+/* Members bar */
+.members-bar {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Pills */
+.pill {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.pill-nba, .pill-ucl, .pill-cbb, .pill-mlb,
+.pill-esports, .pill-tennis {
+  background: rgba(0,255,106,0.06) !important;
+  border: 1px solid rgba(0,255,106,0.2) !important;
+}
+
+/* Code boxes */
+.code-box, .partner-code-btn, .free-month-tag {
+  background: rgba(0,255,106,0.06) !important;
+  border: 1px solid rgba(0,255,106,0.18) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Admin box */
+.admin-box {
+  background: rgba(10,10,10,0.85) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(0,255,106,0.25) !important;
+}
+.admin-field input, .admin-field select {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.admin-field input:focus, .admin-field select:focus {
+  border-color: rgba(0,255,106,0.5) !important;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Gambling notice */
+.gambling-notice {
+  background: rgba(255,200,0,0.04) !important;
+  border: 1px solid rgba(255,200,0,0.12) !important;
+}
+
+/* Live badge */
+.live-badge {
+  background: rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Slip win big */
+.slip-win-big {
+  background: rgba(0,255,106,0.12) !important;
+  border: 1px solid rgba(0,255,106,0.2) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Green glow ambient on page sections */
+.section:nth-child(odd)::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,106,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* ─────────────────────────────────────────────────────── */
+
 </style>
 </head>
 <body>

@@ -554,7 +554,9 @@ footer {
 /* ─────────────────────────────────────────────────────── */
 
 
+
 @media(max-width:700px) {
+  /* Plans - vertical stack, no sideways scroll */
   .plans-grid {
     grid-template-columns: 1fr !important;
     overflow-x: visible !important;
@@ -563,22 +565,28 @@ footer {
     width: 100% !important;
     min-width: unset !important;
   }
-  /* Partners horizontal scroll on mobile with peek */
-  .partners-grid {
-    display: flex !important;
-    overflow-x: auto !important;
+
+  /* Partners - horizontal swipe, peek both sides */
+  .partners-section-wrap {
+    margin: 0 -20px;
+    padding: 0 20px;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 12px !important;
-    padding-bottom: 12px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    /* Show peek of next card */
-    padding-right: 40px !important;
+    display: flex;
+    gap: 12px;
+    padding-right: 60px;
+    padding-left: 20px;
+    padding-bottom: 12px;
   }
-  .partners-grid::-webkit-scrollbar { display: none; }
+  .partners-section-wrap::-webkit-scrollbar { display: none; }
+  .partners-grid {
+    display: contents !important;
+  }
   .partner-card {
-    min-width: 78vw !important;
-    flex-shrink: 0;
+    min-width: 72vw !important;
+    flex-shrink: 0 !important;
     scroll-snap-align: start;
   }
 }
@@ -698,7 +706,7 @@ footer {
       <h2 class="section-title">Our <span>Partners</span></h2>
       <p class="section-sub">Sign up with code <strong style="color:var(--green)">KEVPICKS</strong> and get a <strong style="color:var(--green)">free month of Premium</strong></p>
     </div>
-    <div class="partners-grid">
+    <div class="partners-section-wrap"><div class="partners-grid">
 
       <div class="partner-card">
         <div class="partner-top">

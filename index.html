@@ -607,6 +607,44 @@ html, body {
   }
 }
 
+
+/* Partners smaller on mobile - peek both sides */
+@media(max-width:768px) {
+  .partners-section-wrap {
+    margin: 0 -20px !important;
+    padding: 4px 20px 16px !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    gap: 12px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+  }
+  .partners-section-wrap::-webkit-scrollbar { display: none !important; }
+  .partners-grid {
+    display: contents !important;
+  }
+  .partner-card {
+    min-width: 62vw !important;
+    max-width: 62vw !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+/* Fix gambling notice - remove black box */
+.gambling-notice {
+  background: rgba(255,200,0,0.05) !important;
+  border: 1px solid rgba(255,200,0,0.15) !important;
+  border-radius: 12px !important;
+}
+.gambling-notice p, .gambling-notice strong, .gambling-notice a {
+  color: #aaaaaa !important;
+}
+.gambling-notice a {
+  color: var(--green) !important;
+}
+
 </style>
 </head>
 <body>
